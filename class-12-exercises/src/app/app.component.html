@@ -1,0 +1,55 @@
+<h1>Exercise 1: Use property binding to adjust the height and width of an image</h1>
+<img
+  src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.x0SbGJWTnBJ2Pa6gUIxh3wHaEc%26pid%3DApi&f=1&ipt=280eb73d57455f774f51c9e7d2e0c37273f21bb0282bbb9e6a40563dbaa265ff&ipo=images"
+  alt="BOOK   "
+  class="img"
+  [width]="width"
+  [height]="height"
+/>
+<hr />
+
+<h1> Exercise 2: Click on a button to log to the console.log a message</h1>
+<button (click)="logConsole()">Click me to log to the console</button>
+<hr />
+
+<h1>Exercise 3: Dynamically disable and enable the input field using event binding and property binding</h1>
+<!-- Event Binding -->
+<input type="text" [disabled]="isDisabled" class="input" />
+<button (click)="toggleDisable()">
+  Click me to change the value of isDisabled
+</button>
+<p>{{ isDisabled ? "Currently Disabled" : "Not Disabled" }}</p>
+<hr />
+
+<h1> Exercise 4: Use ngModel to dynamically change the value of a instance property</h1>
+<h1>{{ title }}</h1>
+<input type="text" [(ngModel)]="title" />
+<hr />
+
+<h1>Exercise 5: Dynamically change the value of a instance property without using ngModel</h1>
+<h1>{{ title2 }}</h1>
+<input type="text" [value] = "title2" (input)="title2 = $event.target.value">
+<hr />
+
+<h1>Exercise 6: Use ngIf and a instance property to show the element; if the instance property is false, it should not show the element </h1>
+<p *ngIf="isShow">"Show me when isShow is true! Otherwise, don't show me!"</p>
+<hr>
+<h1>Exercie 7: Use ngIf and else to dynamically add certain elements to the webpage</h1>
+<p *ngIf=isShowContent; else showElse>"If isShowContent is true, show me!"</p>
+<ng-template #showElse>
+<p >Use else to show me this!</p>
+</ng-template>
+<hr>
+
+<h1>Exercise 8: Use ngStyle to change the background color of an element</h1>
+<p [ngStyle]="{backgroundColor: myColor}">"This should change when we implement ngStyle!"</p>
+<hr>
+
+<h1>Exercise 9: Use ngStyle and event binding to dynamically change an element's content and style</h1>
+<p>This should change when we implement ngStyle?</p>
+<input type="color" [(ngModel)]="changeColor">
+<p [ngStyle]="{color: changeColor}">My color is now {{changeColor}}</p>
+<hr>
+
+<h1>Exercise 10: Use ngFor to output each element of an Array</h1>
+<ul *ngFor="let food of foods">{{food}}</ul>
